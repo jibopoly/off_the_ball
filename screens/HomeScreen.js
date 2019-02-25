@@ -34,6 +34,31 @@ export default class HomeScreen extends React.Component {
               The App that helps you analyse your game
             </Text>
           </View>
+          <View style={{borderWidth: 1, marginTop: 50}}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View style={{backgroundColor: '#d3d3d3', padding: 10, flex: 1}}>
+                <Text>Technique</Text>
+              </View>
+              <View  style={{backgroundColor: '#fff', padding: 10, flex: 1}}>
+                <Text>Success</Text>
+              </View>
+              <View  style={{backgroundColor: '#d3d3d3', padding: 10, flex: 1}}>
+                <Text>Fail</Text>
+              </View>
+            </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View>
+                <Text>Pass</Text>
+              </View>
+              <View>
+                <Text></Text>
+              </View>
+              <View>
+                <Text></Text>
+              </View>
+            </View>
+            
+          </View>
         </ScrollView>
       </View>
     );
