@@ -34,30 +34,51 @@ export default class HomeScreen extends React.Component {
               The App that helps you analyse your game
             </Text>
           </View>
-          <View style={{borderWidth: 1, marginTop: 50}}>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <View style={{backgroundColor: '#d3d3d3', padding: 10, flex: 1}}>
+          <View style={{ marginTop: 50 }}>
+            <View style={styles.tableRowHeading}>
+              <View style={styles.tableCell}>
                 <Text>Technique</Text>
               </View>
-              <View  style={{backgroundColor: '#fff', padding: 10, flex: 1}}>
+              <View style={styles.tableCell}>
                 <Text>Success</Text>
               </View>
-              <View  style={{backgroundColor: '#d3d3d3', padding: 10, flex: 1}}>
+              <View style={styles.tableCell}>
                 <Text>Fail</Text>
               </View>
             </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <View>
+            <View style={styles.tableRow}>
+              <View style={styles.tableCellLarge}>
                 <Text>Pass</Text>
               </View>
-              <View>
+              <View style={styles.tableCellLarge}>
                 <Text></Text>
               </View>
-              <View>
+              <View style={styles.tableCellLarge}>
                 <Text></Text>
               </View>
             </View>
-            
+            <View style={styles.tableRow}>
+              <View style={styles.tableCellLarge}>
+                <Text>Shoot</Text>
+              </View>
+              <View style={styles.tableCellLarge}>
+                <Text></Text>
+              </View>
+              <View style={styles.tableCellLarge}>
+                <Text></Text>
+              </View>
+            </View>
+            <View style={styles.tableRowBottom}>
+              <View style={styles.tableCellLarge}>
+                <Text>Tackle</Text>
+              </View>
+              <View style={styles.tableCellLarge}>
+                <Text></Text>
+              </View>
+              <View style={styles.tableCellLarge}>
+                <Text></Text>
+              </View>
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -185,4 +206,34 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  tableRow: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    borderWidth: 1 ,
+    borderBottomWidth: 0,
+  },
+  tableRowHeading: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    borderWidth: 1 ,
+    borderBottomWidth: 0,
+    backgroundColor: '#d3d3d3'
+  },
+  tableRowBottom: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    borderWidth: 1 
+  },
+  tableCell: {
+    borderRightWidth: 1, 
+    padding: 10, 
+    flex: 1
+  },
+  tableCellLarge: {
+    borderRightWidth: 1, 
+    padding: 10,
+    paddingTop: 20,
+    paddingBottom: 20,
+    flex: 1
+  }
 });
