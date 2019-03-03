@@ -4,7 +4,7 @@ import {
     Text,
     TouchableOpacity,
     View,
-    StyleSheet
+    StyleSheet,
 } from 'react-native'
 
 const styles = StyleSheet.create({

@@ -1,17 +1,19 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
-import { WebBrowser } from 'expo';
+import { StyleSheet, View } from 'react-native';
 
 import { Table } from '../components/table/Table';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Off The Ball',
   };
-
 
   render() {
     return (
@@ -21,10 +23,3 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  }
-});
