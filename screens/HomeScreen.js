@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Table } from '../components/table/Table';
+import Table from '../components/table/Table';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,11 @@ const styles = StyleSheet.create({
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Off The Ball',
+    title: 'Current Session',
+    headerStyle: {
+      backgroundColor: '#14786B',
+    },
+    headerTintColor: 'white'
   };
 
   render() {

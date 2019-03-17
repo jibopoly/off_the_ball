@@ -1,5 +1,4 @@
 import React from 'react';
-import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -11,17 +10,14 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+  tabBarLabel: 'Current Session',
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-add-circle" />,
+  tabBarOptions: {
+    activeTintColor: '#14786B',
+    style: {
+      backgroundColor: '#333'
+    }
+  },
 };
 
 const LinksStack = createStackNavigator({
@@ -29,13 +25,14 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Archive',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
+  tabBarLabel: 'Previous Sessions',
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-filing" />,
+  tabBarOptions: {
+    activeTintColor: '#14786B',
+    style: {
+      backgroundColor: '#333'
+    }
+  },
 };
 
 export default createBottomTabNavigator({

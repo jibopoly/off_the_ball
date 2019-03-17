@@ -2,7 +2,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import {
-  Alert, Text, TouchableOpacity, View, StyleSheet,
+  Text, TouchableOpacity, View, StyleSheet,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -87,9 +87,15 @@ class Table extends React.Component {
           <View style={styles.tableCellLarge}>
             <Text>Pass</Text>
           </View>
-          <TouchableOpacity 
-            style={styles.tableCellLargeMain} 
+          {/* <TouchableOpacity
+            style={styles.tableCellLargeMain}
             onPress={() => this.setState({ passCount: this.state.passCount + 1 })}
+          > */}
+          <TouchableOpacity
+            style={styles.tableCellLargeMain}
+            onPress={() => this.setState(prevState => (
+              { passCount: prevState.passCount + 1 }
+            ))}
           >
             <View>
               <Text>{this.state.passCount}</Text>
@@ -128,4 +134,4 @@ class Table extends React.Component {
   }
 }
 
-export { Table };
+export default Table;
