@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../components/table/Table';
 
@@ -16,15 +17,20 @@ class HomeScreen extends React.Component {
     headerStyle: {
       backgroundColor: '#14786B',
     },
-    headerTintColor: 'white'
+    headerTintColor: 'white',
   };
 
   render() {
+    const { session } = this.props;
     return (
       <View style={styles.container}>
-        {this.props.session.map(item => 
-          <Text>{item}</Text>
-        )
+        {session.map(item => (
+          <Text
+            key={item}
+          >
+            {item}
+          </Text>
+        ))
         }
         <Table />
       </View>
@@ -32,8 +38,13 @@ class HomeScreen extends React.Component {
   }
 }
 
+HomeScreen.propTypes = {
+  session: PropTypes.array.isRequired,
+};
+
+
 const mapStateToProps = state => (
   { session: state.currentSession }
 );
 
-export default connect(mapStateToProps)(HomeScreen)
+export default connect(mapStateToProps)(HomeScreen);
