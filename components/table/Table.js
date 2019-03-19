@@ -74,8 +74,17 @@ const Table = (props) => {
         text1="Skill"
         text2="Success"
         text3="Fail"
+        backgroundColor="#5CC4B7"
+        textColor="white"
       />
-      <View style={styles.tableRow}>
+      <TableRow
+        text1="passing"
+        text2="23"
+        text3="25"
+        backgroundColor="#F5F5F5"
+        textColor="#333"
+      />
+      {/* <View style={styles.tableRow}>
         <View style={styles.tableCellLarge}>
           <Text>Pass</Text>
         </View>
@@ -117,7 +126,7 @@ const Table = (props) => {
         <View style={styles.tableCellLargeMain}>
           <Text />
         </View>
-      </View>
+      </View> */}
     </View>
   );
 };

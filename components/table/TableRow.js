@@ -5,81 +5,35 @@ import StyledText from '../StyledText';
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  tableRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderWidth: 1,
-    borderBottomWidth: 0,
-    borderRightWidth: 0,
-    borderColor: '#d3d3d3',
-  },
   tableRowHeading: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderWidth: 1,
-    borderBottomWidth: 0,
-    borderRightWidth: 0,
-    borderColor: '#d3d3d3',
-  },
-  tableRowBottom: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderWidth: 1,
-    borderRightWidth: 0,
-    borderColor: '#d3d3d3',
   },
   tableCell: {
-    borderRightWidth: 1,
     padding: 10,
     flex: 1,
-    borderColor: '#d3d3d3',
-    backgroundColor: '#666'
   },
   tableCellMain: {
-    borderRightWidth: 1,
     padding: 10,
     flex: 2,
-    borderColor: '#d3d3d3',
-    backgroundColor: '#666'
-  },
-  tableCellLarge: {
-    borderRightWidth: 1,
-    padding: 10,
-    paddingTop: 30,
-    paddingBottom: 30,
-    flex: 1,
-    borderColor: '#d3d3d3',
-  },
-  tableCellLargeMain: {
-    borderRightWidth: 1,
-    padding: 10,
-    paddingTop: 30,
-    paddingBottom: 30,
-    flex: 2,
-    borderColor: '#d3d3d3',
   },
   textStyle: {
-    color: '#444',
+    color: 'white',
     fontSize: 22,
-    textAlign: 'center'
   },
 });
 
 
-const TableRow = ({ text1, text2, text3 }) => (
-  <View style={styles.tableRowHeading}>
+const TableRow = ({ text1, text2, text3, backgroundColor, textColor }) => (
+  <View style={{ ...styles.tableRowHeading, backgroundColor }}>
     <View style={styles.tableCell}>
-      <StyledText style={styles.textStyle}>{text1}</StyledText>
+      <StyledText style={{ ...styles.textStyle, color: textColor }}>{text1}</StyledText>
     </View>
     <View style={styles.tableCellMain}>
-      <StyledText style={styles.textStyle}>{text2}</StyledText>
+      <StyledText style={{ ...styles.textStyle, color: textColor }}>{text2}</StyledText>
     </View>
     <View style={styles.tableCellMain}>
-      <StyledText style={styles.textStyle}>{text3}</StyledText>
+      <StyledText style={{ ...styles.textStyle, color: textColor }}>{text3}</StyledText>
     </View>
   </View>
 );
