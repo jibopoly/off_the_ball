@@ -22,13 +22,13 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-    const { session } = this.props;
+    const { session, increaseSuccessFullPassCountConnect, increaseFailedPassCountConnect } = this.props;
     return (
       <View style={styles.container}>
         <Table
           session={session}
-          increaseSuccessFullPassCount={() => this.props.increaseSuccessFullPassCount()}
-          increaseFailedPassCount={() => this.props.increaseFailedPassCount()}
+          increaseSuccessFullPassCount={() => increaseSuccessFullPassCountConnect()}
+          increaseFailedPassCount={() => increaseFailedPassCountConnect()}
         />
       </View>
     );
@@ -37,6 +37,8 @@ class HomeScreen extends React.Component {
 
 HomeScreen.propTypes = {
   session: PropTypes.object.isRequired,
+  increaseSuccessFullPassCountConnect: PropTypes.func.isRequired,
+  increaseFailedPassCountConnect: PropTypes.func.isRequired,
 };
 
 
@@ -45,8 +47,8 @@ const mapStateToProps = state => (
 );
 
 const mapDispatchToProps = {
-  increaseSuccessFullPassCount,
-  increaseFailedPassCount,
+  increaseSuccessFullPassCountConnect: increaseSuccessFullPassCount,
+  increaseFailedPassCountConnect: increaseFailedPassCount,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
