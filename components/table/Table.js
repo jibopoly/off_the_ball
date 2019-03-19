@@ -63,13 +63,10 @@ const styles = StyleSheet.create({
   },
 });
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Table extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { passCount: 0 };
-  }
-
   render() {
+    const { session } = this.props;
     return (
       <View style={{ marginTop: 50, paddingLeft: 1, paddingRight: 1 }}>
         <View style={styles.tableRowHeading}>
@@ -87,23 +84,17 @@ class Table extends React.Component {
           <View style={styles.tableCellLarge}>
             <Text>Pass</Text>
           </View>
-          {/* <TouchableOpacity
-            style={styles.tableCellLargeMain}
-            onPress={() => this.setState({ passCount: this.state.passCount + 1 })}
-          > */}
           <TouchableOpacity
             style={styles.tableCellLargeMain}
-            onPress={() => this.setState(prevState => (
-              { passCount: prevState.passCount + 1 }
-            ))}
+            onPress={this.props.increasePassCount}
           >
             <View>
-              <Text>{this.state.passCount}</Text>
+              <Text>{session.passesCompleted}</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tableCellLargeMain}>
             <View>
-              <Text />
+              <Text>{session.passesFailed}</Text>
             </View>
           </TouchableOpacity>
         </View>

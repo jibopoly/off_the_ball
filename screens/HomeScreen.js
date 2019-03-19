@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../components/table/Table';
+import { increasePassCount, decreasePassCount } from '../actions/currentSession/CurrentSessionActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,22 +25,17 @@ class HomeScreen extends React.Component {
     const { session } = this.props;
     return (
       <View style={styles.container}>
-        {session.map(item => (
-          <Text
-            key={item}
-          >
-            {item}
-          </Text>
-        ))
-        }
-        <Table />
+        <Table
+          session={session}
+          increasePassCount={() => this.props.increasePassCount()}
+        />
       </View>
     );
   }
 }
 
 HomeScreen.propTypes = {
-  session: PropTypes.array.isRequired,
+  session: PropTypes.object.isRequired,
 };
 
 
@@ -47,4 +43,9 @@ const mapStateToProps = state => (
   { session: state.currentSession }
 );
 
-export default connect(mapStateToProps)(HomeScreen);
+const mapDispatchToProps = {
+  increasePassCount,
+  decreasePassCount,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
