@@ -86,13 +86,16 @@ class Table extends React.Component {
           </View>
           <TouchableOpacity
             style={styles.tableCellLargeMain}
-            onPress={this.props.increasePassCount}
+            onPress={this.props.increaseSuccessFullPassCount}
           >
             <View>
               <Text>{session.passesCompleted}</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.tableCellLargeMain}>
+          <TouchableOpacity
+            style={styles.tableCellLargeMain}
+            onPress={this.props.increaseFailedPassCount}
+          >
             <View>
               <Text>{session.passesFailed}</Text>
             </View>

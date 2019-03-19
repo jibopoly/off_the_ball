@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Table from '../components/table/Table';
-import { increasePassCount, decreasePassCount } from '../actions/currentSession/CurrentSessionActions';
+import { increaseSuccessFullPassCount, increaseFailedPassCount } from '../actions/currentSession/CurrentSessionActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +27,8 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
         <Table
           session={session}
-          increasePassCount={() => this.props.increasePassCount()}
+          increaseSuccessFullPassCount={() => this.props.increaseSuccessFullPassCount()}
+          increaseFailedPassCount={() => this.props.increaseFailedPassCount()}
         />
       </View>
     );
@@ -44,8 +45,8 @@ const mapStateToProps = state => (
 );
 
 const mapDispatchToProps = {
-  increasePassCount,
-  decreasePassCount,
+  increaseSuccessFullPassCount,
+  increaseFailedPassCount,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

@@ -1,13 +1,13 @@
-import { INCREASE_PASS_COUNT, DECREASE_PASS_COUNT } from '../../constants/actionTypes/CurrentSessionActionTypes';
+import { INCREASE_SUCCESSFULL_PASS_COUNT, INCREASE_FAILED_PASS_COUNT } from '../../constants/actionTypes/CurrentSessionActionTypes';
 
-export const increasePassCount = () => (
+export const increaseSuccessFullPassCount = () => (
   {
-    type: INCREASE_PASS_COUNT,
+    type: INCREASE_SUCCESSFULL_PASS_COUNT,
   }
 );
 
-export const decreasePassCount = () => (
+export const increaseFailedPassCount = () => (
   {
-    type: DECREASE_PASS_COUNT,
+    type: INCREASE_FAILED_PASS_COUNT,
   }
 );
