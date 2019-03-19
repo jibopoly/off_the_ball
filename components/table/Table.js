@@ -4,6 +4,7 @@ import React from 'react';
 import {
   Text, TouchableOpacity, View, StyleSheet,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,69 +64,73 @@ const styles = StyleSheet.create({
   },
 });
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Table extends React.Component {
-  render() {
-    const { session } = this.props;
-    return (
-      <View style={{ marginTop: 50, paddingLeft: 1, paddingRight: 1 }}>
-        <View style={styles.tableRowHeading}>
-          <View style={styles.tableCell}>
-            <Text style={{ fontWeight: 'bold', color: '#444' }}>Skill</Text>
-          </View>
-          <View style={styles.tableCellMain}>
-            <Text style={{ fontWeight: 'bold', color: '#444' }}>Success</Text>
-          </View>
-          <View style={styles.tableCellMain}>
-            <Text style={{ fontWeight: 'bold', color: '#444' }}>Fail</Text>
-          </View>
+
+const Table = (props) => {
+  const { session, increaseSuccessFullPassCount, increaseFailedPassCount } = props;
+  return (
+    <View style={{ marginTop: 50, paddingLeft: 1, paddingRight: 1 }}>
+      <View style={styles.tableRowHeading}>
+        <View style={styles.tableCell}>
+          <Text style={{ fontWeight: 'bold', color: '#444' }}>Skill</Text>
         </View>
-        <View style={styles.tableRow}>
-          <View style={styles.tableCellLarge}>
-            <Text>Pass</Text>
-          </View>
-          <TouchableOpacity
-            style={styles.tableCellLargeMain}
-            onPress={this.props.increaseSuccessFullPassCount}
-          >
-            <View>
-              <Text>{session.passesCompleted}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.tableCellLargeMain}
-            onPress={this.props.increaseFailedPassCount}
-          >
-            <View>
-              <Text>{session.passesFailed}</Text>
-            </View>
-          </TouchableOpacity>
+        <View style={styles.tableCellMain}>
+          <Text style={{ fontWeight: 'bold', color: '#444' }}>Success</Text>
         </View>
-        <View style={styles.tableRow}>
-          <View style={styles.tableCellLarge}>
-            <Text>Shoot</Text>
-          </View>
-          <View style={styles.tableCellLargeMain}>
-            <Text />
-          </View>
-          <View style={styles.tableCellLargeMain}>
-            <Text />
-          </View>
-        </View>
-        <View style={styles.tableRowBottom}>
-          <View style={styles.tableCellLarge}>
-            <Text>Tackle</Text>
-          </View>
-          <View style={styles.tableCellLargeMain}>
-            <Text />
-          </View>
-          <View style={styles.tableCellLargeMain}>
-            <Text />
-          </View>
+        <View style={styles.tableCellMain}>
+          <Text style={{ fontWeight: 'bold', color: '#444' }}>Fail</Text>
         </View>
       </View>
-    );
-  }
-}
+      <View style={styles.tableRow}>
+        <View style={styles.tableCellLarge}>
+          <Text>Pass</Text>
+        </View>
+        <TouchableOpacity
+          style={styles.tableCellLargeMain}
+          onPress={increaseSuccessFullPassCount}
+        >
+          <View>
+            <Text>{session.passesCompleted}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tableCellLargeMain}
+          onPress={increaseFailedPassCount}
+        >
+          <View>
+            <Text>{session.passesFailed}</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.tableRow}>
+        <View style={styles.tableCellLarge}>
+          <Text>Shoot</Text>
+        </View>
+        <View style={styles.tableCellLargeMain}>
+          <Text />
+        </View>
+        <View style={styles.tableCellLargeMain}>
+          <Text />
+        </View>
+      </View>
+      <View style={styles.tableRowBottom}>
+        <View style={styles.tableCellLarge}>
+          <Text>Tackle</Text>
+        </View>
+        <View style={styles.tableCellLargeMain}>
+          <Text />
+        </View>
+        <View style={styles.tableCellLargeMain}>
+          <Text />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+Table.propTypes = {
+  session: PropTypes.object.isRequired,
+  increaseSuccessFullPassCount: PropTypes.func.isRequired,
+  increaseFailedPassCount: PropTypes.func.isRequired,
+};
 
 export default Table;
