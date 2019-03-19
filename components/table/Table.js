@@ -5,6 +5,7 @@ import {
   Text, TouchableOpacity, View, StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import TableRow from './TableRow';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,17 +70,11 @@ const Table = (props) => {
   const { session, increaseSuccessFullPassCount, increaseFailedPassCount } = props;
   return (
     <View style={{ marginTop: 50, paddingLeft: 1, paddingRight: 1 }}>
-      <View style={styles.tableRowHeading}>
-        <View style={styles.tableCell}>
-          <Text style={{ fontWeight: 'bold', color: '#444' }}>Skill</Text>
-        </View>
-        <View style={styles.tableCellMain}>
-          <Text style={{ fontWeight: 'bold', color: '#444' }}>Success</Text>
-        </View>
-        <View style={styles.tableCellMain}>
-          <Text style={{ fontWeight: 'bold', color: '#444' }}>Fail</Text>
-        </View>
-      </View>
+      <TableRow
+        text1="Skill"
+        text2="Success"
+        text3="Fail"
+      />
       <View style={styles.tableRow}>
         <View style={styles.tableCellLarge}>
           <Text>Pass</Text>
