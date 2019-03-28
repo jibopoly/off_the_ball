@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Table from '../components/table/Table';
 import { increaseSuccessFullPassCount, increaseFailedPassCount } from '../actions/currentSession/CurrentSessionActions';
 
@@ -22,7 +23,12 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-    const { session, increaseSuccessFullPassCountConnect, increaseFailedPassCountConnect } = this.props;
+    const {
+      session,
+      increaseSuccessFullPassCountConnect,
+      increaseFailedPassCountConnect,
+    } = this.props;
+
     return (
       <View style={styles.container}>
         <Table
