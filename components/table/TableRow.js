@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import StyledText from '../StyledText';
 import styles from './tableStyles';
@@ -11,10 +11,11 @@ const TableRow = (props) => {
     text3,
     backgroundColor,
     textColor,
-    tableRowBottom
+    tableRowBottom,
+    onText2Press,
   } = props;
 
-  const tableRowStyle = tableRowBottom ? styles.tableRowBottom : styles.tableRow
+  const tableRowStyle = tableRowBottom ? styles.tableRowBottom : styles.tableRow;
 
   return (
     <View style={{ ...tableRowStyle, backgroundColor }}>
@@ -22,10 +23,20 @@ const TableRow = (props) => {
         <StyledText>{text1}</StyledText>
       </View>
       <View style={styles.tableCellLargeMain}>
-        <StyledText>{text2}</StyledText>
+        <TouchableOpacity
+          onPress={() => onText2Press()}
+          style={{ padding: 30 }}
+        >
+          <StyledText style={{ fontSize: 18, color: textColor }}>{text2}</StyledText>
+        </TouchableOpacity>
       </View>
       <View style={styles.tableCellLargeMain}>
-        <StyledText>{text3}</StyledText>
+        <TouchableOpacity
+          onPress={() => onText2Press()}
+          style={{ padding: 30, backgroundColor: '#d3d3d3' }}
+        >
+          <StyledText style={{ fontSize: 18, color: textColor }}>{text3}</StyledText>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -20,20 +20,9 @@ const Table = (props) => {
         textColor="white"
       />
       <TableRow
-        text1="Passing"
+        text1="Short Pass"
         text2={props.session.passesCompleted}
-        text3={props.session.passesFailed}
-        backgroundColor={''}
-      />
-      <TableRow
-        text1="Dribble"
-        text2={props.session.passesCompleted}
-        text3={props.session.passesFailed}
-
-      />
-      <TableRow
-        text1="Tackle"
-        text2={props.session.passesCompleted}
+        onText2Press={() => increaseSuccessFullPassCount()}
         text3={props.session.passesFailed}
         tableRowBottom
       />
