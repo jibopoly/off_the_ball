@@ -13,6 +13,7 @@ const TableRow = (props) => {
     textColor,
     tableRowBottom,
     onText2Press,
+    onText3Press,
   } = props;
 
   const tableRowStyle = tableRowBottom ? styles.tableRowBottom : styles.tableRow;
@@ -32,8 +33,8 @@ const TableRow = (props) => {
       </View>
       <View style={styles.tableCellLargeMain}>
         <TouchableOpacity
-          onPress={() => onText2Press()}
-          style={{ padding: 30, backgroundColor: '#d3d3d3' }}
+          onPress={() => onText3Press()}
+          style={{ padding: 30 }}
         >
           <StyledText style={{ fontSize: 18, color: textColor }}>{text3}</StyledText>
         </TouchableOpacity>

@@ -24,6 +24,7 @@ const Table = (props) => {
         text2={props.session.passesCompleted}
         onText2Press={() => increaseSuccessFullPassCount()}
         text3={props.session.passesFailed}
+        onText3Press={() => increaseFailedPassCount()}
         tableRowBottom
       />
     </View>
