@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import DatePicker from 'react-native-datepicker'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Table from '../components/table/Table';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import { increaseSuccessFullPassCount, increaseFailedPassCount } from '../actions/currentSession/CurrentSessionActions';
 
 const styles = StyleSheet.create({
@@ -41,7 +42,8 @@ class HomeScreen extends React.Component {
 
     return (
       <ScrollView style={styles.container}>
-        <View style={{ backgroundColor: '#fff', paddingTop: 40, paddingBottom: 40 }}>
+        <ProgressBar />
+        {/* <View style={{ backgroundColor: '#fff', paddingTop: 40, paddingBottom: 40 }}>
           <DatePicker
             showIcon={false}
             style={{ width: 200 }}
@@ -101,7 +103,7 @@ class HomeScreen extends React.Component {
               color: 'black'
             }}
           />
-        </View>
+        </View> */}
 
       </ScrollView>
     );
