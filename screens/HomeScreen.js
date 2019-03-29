@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Input, Button } from 'react-native-elements';
@@ -40,9 +40,10 @@ class HomeScreen extends React.Component {
     } = this.props;
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={{ backgroundColor: '#fff', paddingTop: 40, paddingBottom: 40 }}>
           <DatePicker
+            showIcon={false}
             style={{ width: 200 }}
             date={this.state.date}
             mode="date"
@@ -91,10 +92,18 @@ class HomeScreen extends React.Component {
         <View style={{ paddingTop: 40, paddingBottom: 40, backgroundColor: 'white', marginTop: 40 }}>
           <Button
             title={'Confirm'}
+            buttonStyle={{
+              backgroundColor: '#fff',
+              borderWidth: 1,
+              borderColor: 'black'
+            }}
+            titleStyle={{
+              color: 'black'
+            }}
           />
         </View>
 
-      </View>
+      </ScrollView>
     );
   }
 }
