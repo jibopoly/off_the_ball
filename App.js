@@ -14,7 +14,7 @@ import reducers from './reducers';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#d3d3d3',
   },
 });
 
