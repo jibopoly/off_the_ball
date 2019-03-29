@@ -21,17 +21,13 @@ class ProgressBar extends React.Component {
           nameBottom="Details"
           icon="md-shirt"
         />
-
         <View style={styles.line} />
-
         <ProgressBarItem
           nameTop="Step 2"
           nameBottom="Session"
           icon="md-football"
         />
-
         <View style={styles.line} />
-
         <ProgressBarItem
           nameTop="Step 3"
           nameBottom="Evaluation"

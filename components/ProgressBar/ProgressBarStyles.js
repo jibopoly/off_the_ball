@@ -7,6 +7,10 @@ const styles = {
     justifyContent: 'center',
     paddingBottom: 20,
   },
+  circleContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   circle: {
     height: 60,
     width: 60,
@@ -25,15 +29,17 @@ const styles = {
     backgroundColor: colors.PrimaryColor,
     borderColor: colors.PrimaryColor,
   },
-  line: {
-    width: 50,
-    height: 1,
-    borderWidth: 1,
-    marginTop: 48,
+  circleText: {
+    paddingBottom: 4,
+    paddingTop: 4,
   },
-  circleContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
+  line: {
+    width: 100,
+    borderWidth: 1,
+    height: 1,
+    marginTop: 52,
+    borderColor: 'red',
+    marginLeft: 2,
   },
 };
 
