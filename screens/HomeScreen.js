@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Input } from 'react-native-elements';
+import { Ionicons } from '@expo/vector-icons';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Table from '../components/table/Table';
 import { increaseSuccessFullPassCount, increaseFailedPassCount } from '../actions/currentSession/CurrentSessionActions';
@@ -31,6 +33,17 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
+        <Input
+          placeholder="Player Name"
+          leftIcon={(
+            <Ionicons
+              name="md-shirt"
+              size={24}
+              color="black"
+              style={{ paddingRight: 10 }}
+            />
+          )}
+        />
         <Table
           session={session}
           increaseSuccessFullPassCount={() => increaseSuccessFullPassCountConnect()}

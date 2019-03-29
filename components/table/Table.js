@@ -21,9 +21,9 @@ const Table = (props) => {
       />
       <TableRow
         text1="Short Pass"
-        text2={props.session.passesCompleted}
+        text2={session.passesCompleted}
         onText2Press={() => increaseSuccessFullPassCount()}
-        text3={props.session.passesFailed}
+        text3={session.passesFailed}
         onText3Press={() => increaseFailedPassCount()}
         tableRowBottom
       />
