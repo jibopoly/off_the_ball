@@ -4,6 +4,11 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 const styles = {
+  container: {
+    flexDirection: 'row',
+    paddingTop: 20,
+    justifyContent: 'center',
+  },
   circle: {
     height: 60,
     width: 60,
@@ -18,6 +23,10 @@ const styles = {
     borderWidth: 1,
     marginTop: 48,
   },
+  circleContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 };
 
 class ProgressBar extends React.Component {
@@ -30,9 +39,8 @@ class ProgressBar extends React.Component {
 
   render() {
     return (
-      <View style={{ flexDirection: 'row', paddingTop: 20, justifyContent: 'center' }}>
-
-        <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+      <View style={styles.container}>
+        <View style={styles.circleContainer}>
           <Text>Step 1</Text>
           <View style={styles.circle}>
             <Ionicons
@@ -45,7 +53,8 @@ class ProgressBar extends React.Component {
         </View>
 
         <View style={styles.line} />
-        <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+
+        <View style={styles.circleContainer}>
           <Text>Step 2</Text>
           <View style={styles.circle}>
             <Ionicons
@@ -59,7 +68,7 @@ class ProgressBar extends React.Component {
 
         <View style={styles.line} />
 
-        <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+        <View style={styles.circleContainer}>
           <Text>Step 3</Text>
           <View style={styles.circle}>
             <Ionicons
@@ -70,7 +79,6 @@ class ProgressBar extends React.Component {
           </View>
           <Text>Evaluation</Text>
         </View>
-
       </View>
     );
   }
